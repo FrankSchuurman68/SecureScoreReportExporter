@@ -399,6 +399,7 @@ if ($graphsp) {
                         CustomerName = $contract.DisplayName
                         TenantId = $contract.CustomerContextId
                         CreatedDateTime = $latestScore.createdDateTime
+                        Percentage = $PercentageScore
                         SecureScore = $currentScore
                         MaxScore = $latestScore.maxScore
                         LicensedUserCount = $latestScore.licensedUserCount
@@ -421,15 +422,6 @@ if ($graphsp) {
                         CustomerName = $contract.DisplayName
                         TenantId = $contract.CustomerContextId
                         CreatedDateTime = $latestScore.createdDateTime
-                        SecureScore = $currentScore
-                        MaxScore = $latestScore.maxScore
-                        LicensedUserCount = $latestScore.licensedUserCount
-                        SimilarCompanyAverage = $similarCompanyAverage
-                        IdentityScore = $identityScore
-                        DataScore = $dataScore
-                        DeviceScore = $deviceScore
-                        AppsScore = $appsScore
-                        InfrastructureScore = $infrastructureScore
                     } | Export-csv C:\temp\SecureScoreReports\ErrorTenantOverview.csv -NoTypeInformation -Append
                     Write-Host "Exported Failed Secure Score Report" -ForegroundColor Green
                     $Stoploop = $true
